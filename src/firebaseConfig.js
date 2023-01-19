@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import {getAuth} from 'firebase/auth'
+import {getFirestore} from 'firebase/firestore/lite'
 
 const firebaseConfig = {
 //TODO: Pasar todo a variables de entorno
@@ -15,5 +16,6 @@ const firebaseConfig = {
 initializeApp(firebaseConfig);
 
 const auth = getAuth()
+const db = getFirestore()
 
-export {auth}
+export {auth, db}
