@@ -65,6 +65,7 @@ export const useUserStore = defineStore("user", {
       }
     },
     currentUser() {
+      
       return new Promise((resolve, reject) => {
         const unsuscribe = onAuthStateChanged(
           auth,
@@ -76,6 +77,8 @@ export const useUserStore = defineStore("user", {
               };
             } else {
               this.userData = null;
+              const databaseStore = useDatabaseStore()
+              databaseStore.$reset()
             }
 
             resolve(user);

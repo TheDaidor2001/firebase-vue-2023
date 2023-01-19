@@ -24,6 +24,12 @@ const router = createRouter({
       beforeEnter: requireAuth,
     },
     {
+      path: "/editar/:id",
+      name: "editar",
+      component: () => import("../views/EditarView.vue"),
+      beforeEnter: requireAuth,
+    },
+    {
       path: "/login",
       name: "login",
       component: () => import("../views/LoginView.vue"),
@@ -33,6 +39,7 @@ const router = createRouter({
       name: "register",
       component: () => import("../views/RegisterView.vue"),
     },
+
   ],
 });
 
